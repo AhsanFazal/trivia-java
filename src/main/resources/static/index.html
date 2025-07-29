@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Trivia Challenge</h1>
+      </header>
+
+      <div id="start-screen" class="screen">
+        <h2>Welcome to Trivia Challenge!</h2>
+        <p>Test your knowledge with questions from various categories.</p>
+
+        <div class="settings">
+          <div class="form-group">
+            <label for="amount">Number of Questions:</label>
+            <select id="amount">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+              <option value="">Any</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="start-btn" class="btn btn-primary">Start Game</button>
+      </div>
+
+      <div id="quiz-screen" class="screen hidden">
+        <div class="progress-bar">
+          <div id="progress" class="progress"></div>
+        </div>
+
+        <div class="question-counter">
+          Question <span id="current-question">1</span> of
+          <span id="total-questions">10</span>
+        </div>
+
+        <div id="question-container" class="question-container">
+          <h2 id="question-text"></h2>
+          <div id="options-container" class="options-container"></div>
+        </div>
+
+        <div class="quiz-navigation">
+          <button id="prev-btn" class="btn btn-secondary" disabled>
+            Previous
+          </button>
+          <button id="next-btn" class="btn btn-secondary">Next</button>
+          <button id="submit-btn" class="btn btn-primary hidden">
+            Submit Answers
+          </button>
+        </div>
+      </div>
+
+      <div id="results-screen" class="screen hidden">
+        <h2>Quiz Complete!</h2>
+        <div class="score-display">
+          <p class="score">Your Score: <span id="score">0</span>%</p>
+          <p class="correct-count">
+            You got <span id="correct-count">0</span> out of
+            <span id="total-count">0</span> questions correct!
+          </p>
+        </div>
+
+        <div id="results-container" class="results-container"></div>
+
+        <button id="restart-btn" class="btn btn-primary">Play Again</button>
+      </div>
+
+      <div id="error-screen" class="screen hidden">
+        <h2>Oops! Something went wrong</h2>
+        <p id="error-message"></p>
+        <button id="error-restart-btn" class="btn btn-primary">
+          Try Again
+        </button>
+      </div>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+

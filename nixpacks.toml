@@ -1,0 +1,12 @@
+[start]
+cmd = "java -jar target/trivia-0.0.1-SNAPSHOT.jar"
+
+[variables]
+JAVA_VERSION = "21"
+
+[phases.setup]
+nixPkgs = ["jdk21", "maven"]
+cmds = ["chmod +x mvnw"]
+
+[phases.build]
+cmds = ["./mvnw clean package -DskipTests"]
