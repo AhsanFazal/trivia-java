@@ -26,8 +26,8 @@ public class OpenTriviaClient {
       @Value("${trivia.api.url:https://opentdb.com/api.php}") String apiUrl,
       @Value("${trivia.api.timeout:5000}") int timeout) {
     this.restTemplate = builder
-        .setConnectTimeout(Duration.ofMillis(timeout))
-        .setReadTimeout(Duration.ofMillis(timeout))
+        .connectTimeout(Duration.ofMillis(timeout))
+        .readTimeout(Duration.ofMillis(timeout))
         .build();
     this.apiUrl = apiUrl;
   }
